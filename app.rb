@@ -13,13 +13,17 @@ get '/random-cat' do
  erb(:index)
 end
 
-get '/named-cat' do
+post '/named-cat' do
  p params
- @random_name = params[:name]
+ @random_name = params[:name] #:name had to substitute :random_name. The value was nil.
  erb(:index)
 end
 
 #defining a fourth route
 get '/dog' do
  "This is the 4th route"
+end
+
+get '/form' do
+  erb(:cat_naming_form)
 end
